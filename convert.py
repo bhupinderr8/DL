@@ -30,6 +30,15 @@ np.save('X_data.npy',X_data)
 # Y_final = np.rot90(Y_array)
 # np.save('Y_data.npy', Y_final)
 #
-
 Y = np.asarray(Y_data)
-np.save('Y_data.npy', Y)
+for i in range(7048):
+    if(Y_data[i]==-1):
+        Y_data[i] = 0
+        print (Y_data[i])
+
+
+Y_final = np.zeros((Y.shape[0], 2))
+Y_final[np.arange(Y.shape[0]), Y] = 1
+
+
+np.save('Y_data.npy', Y_final)
