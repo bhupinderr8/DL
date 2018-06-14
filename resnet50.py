@@ -10,7 +10,6 @@ X_data = np.load('X_data.npy')
 Y_data = np.load('Y_data.npy')
 
 
-Base = vgg16.VGG16(include_top=True, weights='imagenet', input_tensor=None, input_shape=None, pooling=None, classes=1000)
 Base = resnet50.ResNet50(include_top=True, weights='imagenet', input_tensor=None, input_shape=None, pooling=None, classes=1000)
 X_ = Base.output
 X_ = Dense(512, activation='relu')(X_)
