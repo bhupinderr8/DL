@@ -18,14 +18,7 @@ model = Model(inputs=Base.input, outputs=predictions)
 model.compile(optimizer=SGD(lr=0.0001, momentum=0.9), loss='categorical_crossentropy')
 callb = ModelCheckpoint(filepath='model.hdf5', monitor='val_loss', verbose=0, save_best_only=False, save_weights_only=False, mode='auto', period=1)
 
-# model.fit(x=X_data,
-#           y=Y_data,
-#           batch_size=20,
-#           epochs=10,
-#           validation_split=0.15,
-#           shuffle=True,
-#           callbacks=[callb]
-#           )
-#
+model.fit(x=X_data,y=Y_data,batch_size=20,epochs=10,validation_split=0.15,shuffle=True,callbacks=[callb])
+
 
 plot_model(model, to_file='model_plot.png', show_shapes=True, show_layer_names=True)
