@@ -234,5 +234,3 @@ with tf.Session() as sess:
                 i * 100 / n_iterations_per_epoch,
                 loss_train),
                 end="")
-
-
